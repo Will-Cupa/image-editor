@@ -5,6 +5,9 @@
 
 using namespace std;
 
+const vector<char> SHADE = {' ','.',',','*','/','(','&','%','#'};
+const int TERMINAL_WIDTH = 211;
+
 class Image {
   vector<vector<int>> _rouge;
   vector<vector<int>> _bleu;
@@ -197,13 +200,22 @@ public:
   // Retourne le vecteur bleu de l'image
   vector<vector<int>> getBleu() const;
 
+
+  vector<vector<char>> toAscii() const;
+
   // Retourne la hauteur de l'image
   int getHaut() const;
 
   // Retourne la largeur de l'image
   int getLarg() const;
 
+  //
+  int getFacteur();
+
+
   bool operator== (const Image& I1) const;
 };
+
+char valueToAscii(int val);
 
 #endif // IMAGE_H_INCLUDED

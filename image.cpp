@@ -596,6 +596,30 @@ Image Image::detectionDesBords(){
   return G;
 }
 
+vector<vector<char>> Image::toAscii() const {
+  Image img = niveauGris();
+  cout << img.getFacteur();
+  img = img.retrecissement(img.getFacteur());
+
+  vector<vector<char>> charImg = {};
+  char px;
+
+  for (int i = 0; i < img._hauteur; i++) {
+    charImg.push_back({});
+    for (int j = 0; j < img._largeur; j++) {
+        px = valueToAscii(img._rouge[i][j]);
+
+        charImg[i].push_back(px);
+        charImg[i].push_back(px);
+    }
+  }
+  return charImg;
+}
+
+int Image::getFacteur(){
+    return (_largeur/(TERMINAL_WIDTH/2))+1;
+}
+
 Image Image::contrasteFiltre() const { return contraster.application(*this); }
 
 bool Image::operator== (const Image& I1) const{
@@ -607,6 +631,15 @@ bool Image::operator== (const Image& I1) const{
     }
   }
   return true;
+}
+
+char valueToAscii(int val){
+    for(int i = 0; i <= 256; i+=32){
+        if (val <= i) {
+            return SHADE[i/32];
+        }
+    }
+    return SHADE[0];
 }
 
 

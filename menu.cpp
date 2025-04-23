@@ -93,7 +93,7 @@ char saisirSens() {
 Image appliquerFonction(Image &image, int choix, vector<Image> &histor) {
   char direction;   // Direction pour certaines transformations
   float facteur;    // Facteur pour certaines transformations
-  Image I1 = image; // Image modifiée
+  Image I1; // Image modifiée
 
   switch (choix) { // Applique la fonction correspondant a choix
   case 0:
@@ -169,11 +169,11 @@ Image appliquerFonction(Image &image, int choix, vector<Image> &histor) {
     break;
 
   case 15:
-    I1 = I1.flou();
+    I1 = image.flou();
     break;
 
   case 16:
-    I1 = I1.flouGaussien();
+    I1 = image.flouGaussien();
     break;
 
   case 17:
@@ -190,14 +190,19 @@ Image appliquerFonction(Image &image, int choix, vector<Image> &histor) {
     break;
 
   case 20:
-    I1 = I1.contrasteFiltre();
+    I1 = image.contrasteFiltre();
     break;
 
   case 21:
-    I1 = I1.reglageAuto();
+    I1 = image.reglageAuto();
     break;
 
   case 22:
+    image.toAscii();
+    I1 = image;
+    break;
+
+  case 23:
     I1 = histor.back(); // assigne l'image precedente a I1
     histor.pop_back();  // retire la derniere image de l'historique
     break;

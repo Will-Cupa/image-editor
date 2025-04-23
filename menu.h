@@ -5,10 +5,10 @@
 #include <vector>
 using namespace std;
 
-// liste des fonctions implémentées
+// liste des fonctions implementees
 const vector<string> FONCTIONS = {"Composante Rouge",
                                   "Niveau De Gris",
-                                  "Deutéranopie (experimental)",
+                                  "Deuteranopie (experimental)",
                                   "Protanopie (experimental)",
                                   "Tritanopie (experimental)",
                                   "Noir Et Blanc",
@@ -28,49 +28,50 @@ const vector<string> FONCTIONS = {"Composante Rouge",
                                   "Detection des bords",
                                   "Contraste (Filtre)",
                                   "Reglage auto",
+                                  "ascii",
                                   "Annuler derniere modification"};
 
-// Demande à l'utilisateur de saisir le nom du fichier à éditer
+// Demande a l'utilisateur de saisir le nom du fichier a editer
 // retourne le nom saisie par l'utilisateur
 string saisirFichier();
 
-// Affiche les fonctionnalités disponibles
+// Affiche les fonctionnalites disponibles
 void listeFonction();
 
-// Demande à l'utilisateur de saisir un entier
-// retourne cet entier (qui sera utilisé pour choisir une fonctionnalité)
+// Demande a l'utilisateur de saisir un entier
+// retourne cet entier (qui sera utilise pour choisir une fonctionnalite)
 int choixFonction();
 
-// Demande à l'utilisateur de saisir un facteur
-// nécessaire pour certaines fonctionnalités
+// Demande a l'utilisateur de saisir un facteur
+// necessaire pour certaines fonctionnalites
 // et retourne ce facteur
 float saisirFacteur();
 
-// Demande à l'utilisateur de saisir une direction parmi haut, bas, gauche,
+// Demande ï¿½ l'utilisateur de saisir une direction parmi haut, bas, gauche,
 // droite sous la forme 'h','b','g','d' et retourne le caractere saisi
 char saisirDirectionFull();
 
-// Demande à l'utilisateur de saisir une direction parmi gauche ou droite
+// Demande ï¿½ l'utilisateur de saisir une direction parmi gauche ou droite
 // sous la forme 'g','d'
 // et retourne le caractere saisi
 char saisirDirectionGD();
 
-// Demande à l'utilisateur de saisir une direction parmi haut ou bas
+// Demande ï¿½ l'utilisateur de saisir une direction parmi haut ou bas
 // sous la forme 'h','b'
 // et retourne le caractere saisi
 char saisirDirectionHB();
 
-// Demande à l'utilisateur de saisir un sens (vertical ou horizontal)
+// Demande ï¿½ l'utilisateur de saisir un sens (vertical ou horizontal)
 // sous la forme 'h','v'
 // et retourne le caractere saisi
 char saisirSens();
 
-// Crée une copie de l'image "Image"
-// et y applique la fonction numéro "choix"
+// Crï¿½e une copie de l'image "Image"
+// et y applique la fonction numï¿½ro "choix"
 // Puis l'ajoute au vecteur "histor" et la retourne
 Image appliquerFonction(Image &image, int choix, vector<Image> &histor);
 
-// Utilise les fonctions précédentes
+// Utilise les fonctions prï¿½cï¿½dentes
 // pour afficher un menu fonctionnel
 void menu();
 #endif
